@@ -7,7 +7,7 @@ const steps = [
   {
     id: 1,
     title: 'Deposit',
-    description: 'Connect your wallet, subscribe to your preferred risk tier, and deposit funds.',
+    description: 'Connect your wallet, subscribe to your preferred Agent with risk tier, and deposit funds.',
     icon: (
       <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} 
