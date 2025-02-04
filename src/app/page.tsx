@@ -3,6 +3,7 @@
 import Hero from '@/components/Hero';
 import Features from '@/components/Features';
 import HowItWorks from '@/components/HowItWorks';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             aria-hidden
             src="/file.svg"
             alt="File icon"
@@ -34,7 +35,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             aria-hidden
             src="/window.svg"
             alt="Window icon"
@@ -49,7 +50,7 @@ export default function Home() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <img
+          <Image
             aria-hidden
             src="/globe.svg"
             alt="Globe icon"
