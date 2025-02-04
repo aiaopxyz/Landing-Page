@@ -1,10 +1,35 @@
 'use client';
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+const useWindowSize = () => {
+  const [windowSize, setWindowSize] = useState({
+    width: typeof window !== 'undefined' ? window.innerWidth : 0,
+  });
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+      });
+    }
+    
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', handleResize);
+      handleResize();
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+
+  return windowSize;
+};
+
 const Hero = () => {
+  const { width } = useWindowSize();
+  const isMobile = width < 768;
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Layers */}
@@ -29,8 +54,8 @@ const Hero = () => {
             key={i}
             className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold"
             style={{
-              top: `${15 + i * (window.innerWidth > 768 ? 20 : 15)}%`,
-              left: `${10 + i * (window.innerWidth > 768 ? 20 : 15)}%`,
+              top: `${15 + i * (isMobile ? 15 : 20)}%`,
+              left: `${10 + i * (isMobile ? 15 : 20)}%`,
               animationDelay: `${i * -2}s`,
             }}
           >
