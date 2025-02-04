@@ -49,19 +49,11 @@ const Hero = () => {
 
       {/* Floating Crypto Symbols */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {['₿', 'Ξ', '◈', '∞', '⬡'].map((symbol, i) => (
-          <div
-            key={i}
-            className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold"
-            style={{
-              top: `${15 + i * (isMobile ? 15 : 20)}%`,
-              left: `${10 + i * (isMobile ? 15 : 20)}%`,
-              animationDelay: `${i * -2}s`,
-            }}
-          >
-            {symbol}
-          </div>
-        ))}
+        <div className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold top-[35%] left-[30%] animate-float-1">₿</div>
+        <div className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold top-[55%] left-[50%] animate-float-2">Ξ</div>
+        <div className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold top-[75%] left-[70%] animate-float-3">◈</div>
+        <div className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold top-[95%] left-[90%] animate-float-4">∞</div>
+        <div className="absolute floating-element text-purple-500/10 text-4xl md:text-6xl font-bold top-[15%] left-[10%] animate-float-5">⬡</div>
       </div>
 
       {/* Binary Rain Effect */}
